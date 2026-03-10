@@ -1,5 +1,5 @@
 {
-  "name": "DAM1M04-Exercici401",
+  "name": "DAM1M04-EXERCICI401",
   "version": "1.0.0",
   "description": "MiniERP d'una botiga - Node.js + Express + Handlebars + MySQL",
   "main": "app.js",

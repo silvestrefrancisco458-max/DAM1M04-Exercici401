@@ -1,0 +1,82 @@
+<h2>Panell de control</h2>
+
+<section class="card">
+  <div class="toolbar">
+    <h3>KPI</h3>
+    <button id="toggleKPI" type="button">Compacte / Complet</button>
+  </div>
+
+  <div id="kpiPanel">
+    <div class="kpi-grid">
+      <div class="card">
+        <h4>Vendes d'avui</h4>
+        <p>{{avui.vendesAvui}}</p>
+      </div>
+
+      <div class="card">
+        <h4>Vendes del mes</h4>
+        <p>{{mes.vendesMes}}</p>
+      </div>
+
+      <div class="card">
+        <h4>Comandes d'avui</h4>
+        <p>{{avui.comandesAvui}}</p>
+      </div>
+
+      <div class="card">
+        <h4>Comandes del mes</h4>
+        <p>{{mes.comandesMes}}</p>
+      </div>
+
+      <div class="card">
+        <h4>Stock baix</h4>
+        <p>{{stockBaix}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="toolbar">
+    <h3>Llistats</h3>
+    <button id="toggleColors" type="button">Activar / Desactivar colors stock</button>
+  </div>
+
+  <h4>Últimes 5 vendes</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Client</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each ultimesVendes}}
+        <tr>
+          <td>{{this.sale_date}}</td>
+          <td>{{this.client}}</td>
+          <td>{{this.total}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <h4>Top 5 productes més venuts</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Producte</th>
+        <th>Unitats</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each topProductes}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.totalVenut}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,52 @@
+<h2>Clients</h2>
+
+<section class="card">
+  <form method="GET" action="/clients" class="toolbar">
+    <input
+      type="text"
+      name="cerca"
+      placeholder="Cerca per nom o email"
+      value="{{cerca}}"
+    >
+    <button type="submit">Cercar</button>
+    <a href="/clientAfegir">Afegir client</a>
+  </form>
+</section>
+
+<section class="card">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Telèfon</th>
+        <th># compres</th>
+        <th>Accions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each clients}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.phone}}</td>
+          <td>{{this.compres}}</td>
+          <td>
+            <a href="/clientFitxa?id={{this.id}}">Fitxa</a>
+            <a href="/clientEditar?id={{this.id}}">Editar</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>
+
+<section class="card toolbar">
+  {{#if (gt pagina 0)}}
+    <a href="/clients?pagina={{resta pagina 1}}&cerca={{cerca}}">Anterior</a>
+  {{/if}}
+
+  <span>Pàgina: {{pagina}}</span>
+
+  <a href="/clients?pagina={{suma pagina 1}}&cerca={{cerca}}">Següent</a>
+</section>

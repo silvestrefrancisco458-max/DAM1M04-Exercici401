@@ -1,0 +1,26 @@
+<h2>Vendes</h2>
+
+<section class="card">
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Client</th>
+        <th>Total</th>
+        <th>Accions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each vendes}}
+        <tr>
+          <td>{{this.sale_date}}</td>
+          <td>{{this.client}}</td>
+          <td>{{this.total}}</td>
+          <td>
+            <a href="/vendaFitxa?id={{this.id}}">Veure</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>

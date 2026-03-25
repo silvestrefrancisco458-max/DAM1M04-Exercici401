@@ -1,0 +1,33 @@
+<h2>Fitxa client</h2>
+
+<section class="card">
+  <p><strong>Nom:</strong> {{client.name}}</p>
+  <p><strong>Email:</strong> {{client.email}}</p>
+  <p><strong>Telèfon:</strong> {{client.phone}}</p>
+</section>
+
+<section class="card">
+  <h3>Últimes 10 vendes</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each vendes}}
+        <tr>
+          <td>{{this.sale_date}}</td>
+          <td>{{this.total}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <a href="/clientEditar?id={{client.id}}">Editar client</a>
+  <a href="/clients">Tornar</a>
+</section>

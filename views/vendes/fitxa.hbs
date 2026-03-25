@@ -1,0 +1,37 @@
+<h2>Detall venda</h2>
+
+<section class="card">
+  <p><strong>ID:</strong> {{venda.id}}</p>
+  <p><strong>Data:</strong> {{venda.sale_date}}</p>
+  <p><strong>Total:</strong> {{venda.total}}</p>
+  <p><strong>Mètode de pagament:</strong> {{venda.payment_method}}</p>
+</section>
+
+<section class="card">
+  <h3>Línies de venda</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Producte</th>
+        <th>Quantitat</th>
+        <th>Preu unitat</th>
+        <th>Total línia</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each linies}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.qty}}</td>
+          <td>{{this.unit_price}}</td>
+          <td>{{this.line_total}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <a href="/vendes">Tornar</a>
+</section>

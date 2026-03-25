@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  padding: 15px;
+  background: #333;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #ddd;
+}
+
+.menu a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+/* TABLAS */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* STOCK COLORES */
+.stock-ok {
+  background: rgba(0, 200, 0, 0.2);
+}
+
+.stock-low {
+  background: rgba(255, 165, 0, 0.3);
+}
+
+.stock-critical {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+/* ERRORES */
+.input-error {
+  border: 2px solid red;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9em;
+}
+
+/* BOTONES */
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* OCULTO */
+.hidden {
+  display: none;
+}

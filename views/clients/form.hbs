@@ -1,0 +1,44 @@
+<h2>{{#if client}}Editar client{{else}}Afegir client{{/if}}</h2>
+
+<section class="card">
+  <form id="formClient" method="POST" action="{{action}}">
+    <input type="hidden" name="taula" value="clients">
+
+    {{#if client}}
+      <input type="hidden" name="id" value="{{client.id}}">
+    {{/if}}
+
+    <div>
+      <label for="name">Nom</label>
+      <input id="name" name="name" type="text" value="{{client.name}}">
+      <p id="errorName" class="error-text"></p>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" value="{{client.email}}">
+      <p id="errorEmail" class="error-text"></p>
+    </div>
+
+    <div>
+      <label for="phone">Telèfon</label>
+      <input id="phone" name="phone" type="text" value="{{client.phone}}">
+      <p id="errorPhone" class="error-text"></p>
+    </div>
+
+    <div class="toolbar">
+      <button type="submit">Guardar</button>
+      <a href="/clients">Tornar</a>
+    </div>
+  </form>
+</section>
+
+{{#if client}}
+  <section class="card">
+    <form method="POST" action="/Delete">
+      <input type="hidden" name="taula" value="clients">
+      <input type="hidden" name="id" value="{{client.id}}">
+      <button type="submit">Esborrar client</button>
+    </form>
+  </section>
+{{/if}}

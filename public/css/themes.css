@@ -1,0 +1,35 @@
+/* CLARO */
+body.theme-clar {
+  background: #f5f5f5;
+  color: #222;
+}
+
+/* OSCURO */
+body.theme-nit {
+  background: #1e1e1e;
+  color: white;
+}
+
+/* ALTO CONTRASTE */
+body.theme-contrast {
+  background: black;
+  color: yellow;
+}
+
+/* CARDS */
+body.theme-nit .card {
+  background: #2a2a2a;
+}
+
+body.theme-contrast .card {
+  background: #111;
+}
+
+/* TABLAS */
+body.theme-nit table {
+  background: #2a2a2a;
+}
+
+body.theme-contrast table {
+  background: #000;
+}

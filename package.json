@@ -1,5 +1,5 @@
 {
-  "name": "DAM1M04-EXERCICI401",
+  "name": "dam1m04-exercici401",
   "version": "1.0.0",
   "description": "MiniERP d'una botiga - Node.js + Express + Handlebars + MySQL",
   "main": "app.js",
@@ -8,12 +8,23 @@
     "dev": "nodemon app.js"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.19.0",
-    "express-handlebars": "^7.1.2",
-    "mysql2": "^3.9.0"
+    "body-parser": "^1.20.4",
+    "express": "^4.22.1",
+    "express-handlebars": "^7.1.3",
+    "mysql2": "^3.20.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvestrefrancisco458-max/DAM1M04-Exercici401.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silvestrefrancisco458-max/DAM1M04-Exercici401/issues"
+  },
+  "homepage": "https://github.com/silvestrefrancisco458-max/DAM1M04-Exercici401#readme"
 }

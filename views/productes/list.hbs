@@ -1,0 +1,54 @@
+<h2>Productes</h2>
+
+<section class="card">
+  <form method="GET" action="/productes" class="toolbar">
+    <input
+      type="text"
+      name="cerca"
+      placeholder="Cerca per nom o categoria"
+      value="{{cerca}}"
+    >
+    <button type="submit">Cercar</button>
+    <a href="/producteAfegir">Afegir producte</a>
+    <button id="toggleColors" type="button">Colors stock</button>
+  </form>
+</section>
+
+<section class="card">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Categoria</th>
+        <th>Preu</th>
+        <th>Stock</th>
+        <th>Actiu</th>
+        <th>Accions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each productes}}
+        <tr class="{{#if (lt this.stock 3)}}stock-critical{{else}}{{#if (lt this.stock 6)}}stock-low{{else}}stock-ok{{/if}}{{/if}}">
+          <td>{{this.name}}</td>
+          <td>{{this.category}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.stock}}</td>
+          <td>{{#if this.active}}Sí{{else}}No{{/if}}</td>
+          <td>
+            <a href="/producteEditar?id={{this.id}}">Editar</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>
+
+<section class="card toolbar">
+  {{#if (gt pagina 0)}}
+    <a href="/productes?pagina={{resta pagina 1}}&cerca={{cerca}}">Anterior</a>
+  {{/if}}
+
+  <span>Pàgina: {{pagina}}</span>
+
+  <a href="/productes?pagina={{suma pagina 1}}&cerca={{cerca}}">Següent</a>
+</section>

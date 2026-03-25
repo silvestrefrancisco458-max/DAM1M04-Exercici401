@@ -4,21 +4,15 @@
 const mysql = require('mysql2/promise');
 
 // Configuración básica de la BD (ajusta usuario/contraseña/host según tu entorno)
-const dbConfig = {
+const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'tuclave',
-    database: 'schema.sql'
-};
+    password: '',
+    database: 'minierp',
+    waitForConnections: true,
+    connectionLimit: 10
+});
 
 // Función helper para obtener una conexión nueva
 // Se usa con: const conn = await getConnection();
-async function getConnection() {
-    const conn = await mysql.createConnection(dbConfig);
-    return conn;
-}
-
-module.exports = {
-    dbConfig,
-    getConnection,
-};
+module.exports = pool;

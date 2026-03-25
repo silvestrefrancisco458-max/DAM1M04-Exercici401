@@ -1,0 +1,62 @@
+<h2>{{#if producte}}Editar producte{{else}}Afegir producte{{/if}}</h2>
+
+<section class="card">
+  <form id="formProducte" method="POST" action="{{action}}">
+    <input type="hidden" name="taula" value="productes">
+
+    {{#if producte}}
+      <input type="hidden" name="id" value="{{producte.id}}">
+    {{/if}}
+
+    <div>
+      <label for="name">Nom</label>
+      <input id="name" name="name" type="text" value="{{producte.name}}">
+      <p id="errorName" class="error-text"></p>
+    </div>
+
+    <div>
+      <label for="category">Categoria</label>
+      <input id="category" name="category" type="text" value="{{producte.category}}">
+      <p id="errorCategory" class="error-text"></p>
+    </div>
+
+    <div>
+      <label for="price">Preu</label>
+      <input id="price" name="price" type="number" step="0.01" value="{{producte.price}}">
+      <p id="errorPrice" class="error-text"></p>
+    </div>
+
+    <div>
+      <label for="stock">Stock</label>
+      <input id="stock" name="stock" type="number" value="{{producte.stock}}">
+      <p id="errorStock" class="error-text"></p>
+    </div>
+
+    <div>
+      <label>
+        <input
+          type="checkbox"
+          name="active"
+          value="1"
+          {{#if producte.active}}checked{{/if}}
+        >
+        Actiu
+      </label>
+    </div>
+
+    <div class="toolbar">
+      <button type="submit">Guardar</button>
+      <a href="/productes">Tornar</a>
+    </div>
+  </form>
+</section>
+
+{{#if producte}}
+  <section class="card">
+    <form method="POST" action="/Delete">
+      <input type="hidden" name="taula" value="productes">
+      <input type="hidden" name="id" value="{{producte.id}}">
+      <button type="submit">Esborrar producte</button>
+    </form>
+  </section>
+{{/if}}

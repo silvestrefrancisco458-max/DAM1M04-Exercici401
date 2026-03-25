@@ -1,0 +1,22 @@
+<h2>Fitxa producte</h2>
+
+<section class="card">
+  <p><strong>Nom:</strong> {{producte.name}}</p>
+  <p><strong>Categoria:</strong> {{producte.category}}</p>
+  <p><strong>Preu:</strong> {{producte.price}} €</p>
+  <p><strong>Stock:</strong> {{producte.stock}}</p>
+  <p><strong>Actiu:</strong> {{#if producte.active}}Sí{{else}}No{{/if}}</p>
+</section>
+
+<section class="card toolbar">
+  <a href="/producteEditar?id={{producte.id}}">Editar</a>
+  <a href="/productes">Tornar</a>
+</section>
+
+<section class="card">
+  <form method="POST" action="/Delete">
+    <input type="hidden" name="taula" value="productes">
+    <input type="hidden" name="id" value="{{producte.id}}">
+    <button type="submit">Esborrar producte</button>
+  </form>
+</section>

@@ -1,0 +1,52 @@
+<h2>Afegir venda</h2>
+
+<section class="card">
+  <form method="POST" action="/create">
+
+    <input type="hidden" name="taula" value="vendes">
+
+    <!-- CLIENT -->
+    <div>
+      <label>Client</label>
+      <select name="customer_id">
+        {{#each clients}}
+          <option value="{{this.id}}">
+            {{this.name}}
+          </option>
+        {{/each}}
+      </select>
+    </div>
+
+    <!-- MÉTODO DE PAGO -->
+    <div>
+      <label>Mètode de pagament</label>
+      <select name="payment_method">
+        <option value="cash">Efectiu</option>
+        <option value="card">Targeta</option>
+      </select>
+    </div>
+
+    <h3>Productes</h3>
+
+    <!-- PRODUCTO 1 -->
+    <div class="card">
+      <label>Producte</label>
+      <select name="product_id">
+        {{#each productes}}
+          <option value="{{this.id}}">
+            {{this.name}} ({{this.price}}€)
+          </option>
+        {{/each}}
+      </select>
+
+      <label>Quantitat</label>
+      <input type="number" name="qty" value="1" min="1">
+    </div>
+
+    <div class="toolbar">
+      <button type="submit">Crear venda</button>
+      <a href="/vendes">Cancel·lar</a>
+    </div>
+
+  </form>
+</section>

@@ -6,8 +6,8 @@ const mysql = require('mysql2/promise');
 // Configuración básica de la BD (ajusta usuario/contraseña/host según tu entorno)
 const pool = mysql.createPool({
     host: 'localhost',
-    user: 'root',
-    password: '',
+    user: 'minierp_user',
+    password: '1234',
     database: 'minierp',
     waitForConnections: true,
     connectionLimit: 10
